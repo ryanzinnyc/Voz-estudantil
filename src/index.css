@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Voz Estudantil — design tokens
+   Palette extracted from the brand icon:
+   deep indigo/violet canvas + electric cyan energy accent.
+   ============================================================ */
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-void: #0b0618;
+  --color-ink: #0f0824;
+  --color-night: #160b33;
+  --color-violet-deep: #2a1466;
+  --color-violet: #6c4fe0;
+  --color-violet-bright: #8b6bff;
+  --color-cyan: #18c3f5;
+  --color-cyan-bright: #5be0ff;
+  --color-cream: #f3f0ff;
+  --color-muted: #aba0d6;
+
+  --shadow-glow: 0 0 80px -20px rgba(108, 79, 224, 0.55);
+  --shadow-cyan: 0 0 60px -18px rgba(24, 195, 245, 0.6);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-void);
+    color: var(--color-cream);
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-cyan);
+    color: var(--color-void);
+  }
+
+  /* Visible, on-brand focus ring for keyboard users */
+  :focus-visible {
+    outline: 2px solid var(--color-cyan-bright);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+/* Thin custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-violet), var(--color-violet-deep));
+  border-radius: 999px;
+  border: 2px solid var(--color-void);
+}
+
+/* ============================================================
+   Keyframe animations (CSS-first for performance)
+   ============================================================ */
+@keyframes vz-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes vz-float {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -28px, 0) scale(1.04); }
+}
+
+@keyframes vz-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(24px, 18px, 0); }
+}
+
+@keyframes vz-pulse-ring {
+  0% { transform: scale(0.92); opacity: 0.7; }
+  70% { transform: scale(1.25); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes vz-shimmer {
+  to { background-position: 200% center; }
+}
+
+.vz-marquee-track {
+  animation: vz-marquee 38s linear infinite;
+}
+
+.vz-float {
+  animation: vz-float 11s ease-in-out infinite;
+}
+.vz-drift {
+  animation: vz-drift 16s ease-in-out infinite;
+}
+
+/* Animated gradient text for the wordmark */
+.vz-shimmer-text {
+  background: linear-gradient(
+    100deg,
+    var(--color-cream) 0%,
+    var(--color-cyan-bright) 35%,
+    var(--color-violet-bright) 60%,
+    var(--color-cream) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: vz-shimmer 8s linear infinite;
+}
+
+/* Subtle film grain / texture overlay */
+.vz-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   Respect reduced-motion across the board
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -66,6 +66,72 @@ export const IconRocket = (p: SVGProps<SVGSVGElement>) => (
   </Svg>
 );
 
+/* ── Cargos do grêmio ───────────────────────────────────── */
+
+export const IconCrown = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <path d="m3 7 4.5 4L12 4l4.5 7L21 7l-1.7 11H4.7L3 7Z" />
+    <path d="M5 21h14" />
+  </Svg>
+);
+
+export const IconShield = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+    <path d="m9 12 2 2 4-4" />
+  </Svg>
+);
+
+export const IconClipboard = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <rect x="8" y="2" width="8" height="4" rx="1" />
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+    <path d="M9 12h6" />
+    <path d="M9 16h4" />
+  </Svg>
+);
+
+export const IconWallet = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <path d="M3 8a2 2 0 0 1 2-2h12a1 1 0 0 1 1 1v1" />
+    <path d="M3 8v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-3" />
+    <path d="M21 11h-4a2 2 0 0 0 0 4h4a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1Z" />
+  </Svg>
+);
+
+export const IconUsers = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </Svg>
+);
+
+export const IconPalette = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <path d="M12 3a9 9 0 0 0 0 18c1 0 1.6-.9 1.6-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-1 .8-1.7 1.8-1.7H16a5 5 0 0 0 5-5c0-4.4-4-7.2-9-7.2Z" />
+    <circle cx="7.5" cy="11" r="1" fill="currentColor" stroke="none" />
+    <circle cx="12" cy="8" r="1" fill="currentColor" stroke="none" />
+    <circle cx="16.5" cy="11" r="1" fill="currentColor" stroke="none" />
+  </Svg>
+);
+
+export const IconLeaf = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z" />
+    <path d="M2 21c0-3 1.85-5.36 5.08-6" />
+  </Svg>
+);
+
+export const IconGradCap = (p: SVGProps<SVGSVGElement>) => (
+  <Svg {...p}>
+    <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+    <path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5" />
+    <path d="M22 10v6" />
+  </Svg>
+);
+
 export const IconArrowRight = (p: SVGProps<SVGSVGElement>) => (
   <Svg {...p}>
     <path d="M5 12h14" />

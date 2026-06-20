@@ -1,4 +1,4 @@
-/** Camada de fundo fixa: grade tenue + auroras violeta/ciano com leve deriva. */
+/** Camada de fundo fixa: grade tenue + auroras azul/ciano com leve deriva. */
 export default function Background() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -7,7 +7,7 @@ export default function Background() {
         className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(171,160,214,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(171,160,214,0.6) 1px, transparent 1px)",
+            "linear-gradient(rgba(110,150,210,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(110,150,210,0.6) 1px, transparent 1px)",
           backgroundSize: "70px 70px",
           maskImage:
             "radial-gradient(ellipse 80% 60% at 50% 30%, #000 0%, transparent 75%)",
@@ -16,7 +16,7 @@ export default function Background() {
         }}
       />
 
-      {/* Aurora violeta — topo */}
+      {/* Aurora azul — topo */}
       <div className="vz-drift absolute -top-48 left-1/2 h-[68vh] w-[68vh] -translate-x-1/2 rounded-full bg-violet/25 blur-[130px]" />
       {/* Acento ciano — direita */}
       <div className="vz-float absolute top-[28%] right-[-12%] h-[46vh] w-[46vh] rounded-full bg-cyan/15 blur-[130px]" />

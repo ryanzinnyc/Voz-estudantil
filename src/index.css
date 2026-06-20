@@ -2,30 +2,38 @@
 
 /* ============================================================
    Voz Estudantil — design tokens
-   Palette extracted from the brand icon:
-   deep indigo/violet canvas + electric cyan energy accent.
+   Paleta da nova marca (globo + constelação):
+   base navy / espaço azul-escuro + energia ciano e azul claro.
+   Sem roxo — foco total em tons de azul (escuro → claro) e ciano.
    ============================================================ */
 @theme {
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-  --color-void: #0b0618;
-  --color-ink: #0f0824;
-  --color-night: #160b33;
-  --color-violet-deep: #2a1466;
-  --color-violet: #6c4fe0;
-  --color-violet-bright: #8b6bff;
+  /* Base escura — navy / espaço (sem roxo) */
+  --color-void: #050b18;
+  --color-ink: #071228;
+  --color-night: #0b1d3a;
+
+  /* Acento azul atmosférico — escuro → médio → claro.
+     (nomes mantidos por compatibilidade; agora são azuis) */
+  --color-violet-deep: #07294f;   /* azul escuro */
+  --color-violet: #1f6fd0;        /* azul */
+  --color-violet-bright: #4ec5ff; /* azul claro */
+
+  /* Ciano — a energia da marca */
   --color-cyan: #18c3f5;
   --color-cyan-bright: #5be0ff;
-  --color-cream: #f3f0ff;
-  --color-muted: #aba0d6;
+
+  --color-cream: #eef4ff;
+  --color-muted: #9bb0d4;
 
   /* Paleta institucional — identidade Voz Estudantil */
   --color-brand-deep: #002f5c;
   --color-brand: #006a89;
   --color-brand-bright: #009dcf;
 
-  --shadow-glow: 0 0 80px -20px rgba(108, 79, 224, 0.55);
+  --shadow-glow: 0 0 80px -20px rgba(31, 111, 208, 0.55);
   --shadow-cyan: 0 0 60px -18px rgba(24, 195, 245, 0.6);
   --shadow-brand: 0 26px 70px -32px rgba(0, 157, 207, 0.6);
 }

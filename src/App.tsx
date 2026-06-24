@@ -3,6 +3,7 @@ import Background from "./components/Background";
 import Spotlight from "./components/Spotlight";
 import Nav from "./components/Nav";
 import Hero from "./components/Hero";
+import Chapa from "./components/Chapa";
 import Marquee from "./components/Marquee";
 import Manifesto from "./components/Manifesto";
 import Pillars from "./components/Pillars";
@@ -30,6 +31,7 @@ export default function App() {
 
         <main id="main">
           <Hero />
+          <Chapa />
           <Marquee />
           <Manifesto />
           <Pillars />

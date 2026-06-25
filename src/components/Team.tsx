@@ -17,17 +17,20 @@ import {
 type Member = {
   mono: string; // sigla curta exibida como marca d'água
   role: string; // cargo oficial
+  name: string; // nome da pessoa eleita
+  turma?: string; // turma (quando informada)
   category: string; // agrupamento para hierarquia visual
   icon: ReactNode;
   blurb: string;
   featured?: boolean; // realce para a liderança (presidência)
 };
 
-// Edite quando a chapa estiver definida — basta trocar o status do card.
+// Chapa eleita — Voz Estudantil 2026.
 const TEAM: Member[] = [
   {
     mono: "PR",
     role: "Presidente",
+    name: "Wesley Gabriel Machado Miranda",
     category: "Presidência",
     icon: <IconCrown className="h-6 w-6" />,
     blurb: "Lidera, articula e representa a voz de todos.",
@@ -36,6 +39,8 @@ const TEAM: Member[] = [
   {
     mono: "VP",
     role: "Vice-Presidente",
+    name: "Gabriely Vaz",
+    turma: "2º C",
     category: "Presidência",
     icon: <IconShield className="h-6 w-6" />,
     blurb: "Apoia a presidência, coordena ações e garante a continuidade dos trabalhos.",
@@ -44,6 +49,8 @@ const TEAM: Member[] = [
   {
     mono: "1S",
     role: "1º Secretário",
+    name: "Vitória Licnveski",
+    turma: "1º C",
     category: "Secretaria",
     icon: <IconClipboard className="h-6 w-6" />,
     blurb: "Responsável pela organização documental, atas e registros do grêmio.",
@@ -51,6 +58,8 @@ const TEAM: Member[] = [
   {
     mono: "2S",
     role: "2º Secretário",
+    name: "Guilherme Leal Rodrigues",
+    turma: "3º B",
     category: "Secretaria",
     icon: <IconClipboard className="h-6 w-6" />,
     blurb: "Auxilia a secretaria e garante a organização administrativa.",
@@ -58,6 +67,8 @@ const TEAM: Member[] = [
   {
     mono: "1T",
     role: "1º Tesoureiro",
+    name: "Lucas André Batista Da Rocha",
+    turma: "1º C",
     category: "Tesouraria",
     icon: <IconWallet className="h-6 w-6" />,
     blurb: "Gerencia recursos financeiros, orçamento e prestação de contas.",
@@ -65,6 +76,8 @@ const TEAM: Member[] = [
   {
     mono: "2T",
     role: "2º Tesoureiro",
+    name: "Eduardo Rodrigues",
+    turma: "3º B",
     category: "Tesouraria",
     icon: <IconWallet className="h-6 w-6" />,
     blurb: "Auxilia no controle financeiro e na transparência dos recursos.",
@@ -72,6 +85,8 @@ const TEAM: Member[] = [
   {
     mono: "DS",
     role: "Diretor Social",
+    name: "Mattias",
+    turma: "3º C",
     category: "Diretoria",
     icon: <IconUsers className="h-6 w-6" />,
     blurb: "Promove integração, inclusão e bem-estar entre os estudantes.",
@@ -79,6 +94,8 @@ const TEAM: Member[] = [
   {
     mono: "CI",
     role: "Diretor de Comunicação e Imprensa",
+    name: "Maria Clara França Gusso",
+    turma: "1º C",
     category: "Diretoria",
     icon: <IconMegaphone className="h-6 w-6" />,
     blurb: "Divulga ações, mantém canais de comunicação e fortalece a presença da chapa.",
@@ -86,6 +103,8 @@ const TEAM: Member[] = [
   {
     mono: "CD",
     role: "Diretor de Cultura e Diversidade",
+    name: "Luiza Victória Silva de Souza",
+    turma: "1º C",
     category: "Diretoria",
     icon: <IconPalette className="h-6 w-6" />,
     blurb: "Valoriza a cultura, a arte e a diversidade dentro da escola.",
@@ -93,6 +112,8 @@ const TEAM: Member[] = [
   {
     mono: "EL",
     role: "Diretor de Esporte e Lazer",
+    name: "Nicolas Andrade",
+    turma: "3º C",
     category: "Diretoria",
     icon: <IconActivity className="h-6 w-6" />,
     blurb: "Incentiva atividades esportivas, recreativas e de lazer.",
@@ -100,6 +121,8 @@ const TEAM: Member[] = [
   {
     mono: "SM",
     role: "Diretor de Saúde e Meio Ambiente",
+    name: "Ryan Faria",
+    turma: "1º C",
     category: "Diretoria",
     icon: <IconLeaf className="h-6 w-6" />,
     blurb: "Promove campanhas de saúde, sustentabilidade e conscientização ambiental.",
@@ -107,6 +130,8 @@ const TEAM: Member[] = [
   {
     mono: "RA",
     role: "Diretor de Relações Acadêmicas",
+    name: "Rafaela",
+    turma: "1º C",
     category: "Diretoria",
     icon: <IconGradCap className="h-6 w-6" />,
     blurb: "Representa os interesses acadêmicos dos estudantes e dialoga com a comunidade escolar.",
@@ -128,11 +153,11 @@ function PersonGlyph() {
 }
 
 function RoleCard({ member }: { member: Member }) {
-  const { mono, role, category, icon, blurb, featured } = member;
+  const { mono, role, name, turma, category, icon, blurb, featured } = member;
 
   return (
     <article
-      aria-label={`${role} — vaga a definir`}
+      aria-label={`${role} — ${name}${turma ? `, ${turma}` : ""}`}
       className={`vz-team-card group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white/[0.03] backdrop-blur-md transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-brand ${
         featured
           ? "border-brand-bright/30 shadow-[0_18px_50px_-34px_rgba(0,157,207,0.55)]"
@@ -195,16 +220,20 @@ function RoleCard({ member }: { member: Member }) {
 
       {/* identificação */}
       <div className="relative flex flex-1 flex-col p-6">
-        <h3 className="font-display text-xl font-semibold leading-snug text-cream">{role}</h3>
+        <span className="font-display text-xs font-medium uppercase tracking-[0.18em] text-brand-bright">
+          {role}
+        </span>
+        <h3 className="mt-1.5 font-display text-xl font-semibold leading-snug text-cream">
+          {name}
+        </h3>
         <p className="mt-2.5 text-sm leading-relaxed text-muted">{blurb}</p>
 
         <div className="mt-auto flex items-center gap-2.5 pt-5">
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-bright/70" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-bright" />
           </span>
           <span className="font-display text-xs font-medium uppercase tracking-wider text-muted/90">
-            Vaga a definir
+            {turma ? `Turma ${turma}` : "Voz Estudantil"}
           </span>
         </div>
       </div>
@@ -224,7 +253,7 @@ export default function Team() {
               As pessoas por trás da <span className="vz-brand-text">voz</span>.
             </>
           }
-          intro="Doze cargos, uma só missão: representar cada estudante. Os nomes entram aqui assim que a chapa for formada — a estrutura já está pronta para recebê-los."
+          intro="Doze cargos, uma só missão: representar cada estudante. Conheça a chapa que veste essa ideia."
         />
 
         <Stagger

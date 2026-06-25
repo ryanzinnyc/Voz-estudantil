@@ -214,6 +214,27 @@
 }
 
 /* ============================================================
+   Performance no mobile — congela efeitos contínuos pesados.
+   O visual ESTÁTICO continua igual; só paramos as animações
+   que custam caro na GPU do celular (auroras com blur gigante,
+   shimmer de texto e o overlay de grão em mix-blend).
+   No desktop nada muda.
+   ============================================================ */
+@media (max-width: 768px) {
+  .vz-float,
+  .vz-drift,
+  .vz-shimmer-text,
+  .vz-brand-text {
+    animation: none !important;
+  }
+
+  /* Overlay de grão (mix-blend em tela cheia) repinta demais no mobile */
+  .vz-grain::before {
+    display: none;
+  }
+}
+
+/* ============================================================
    Respect reduced-motion across the board
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {

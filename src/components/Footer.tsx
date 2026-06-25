@@ -7,6 +7,7 @@ const LINKS = [
   { label: "Propostas", href: "#propostas" },
   { label: "Equipe", href: "#equipe" },
   { label: "Momentos", href: "#momentos" },
+  { label: "Dúvidas", href: "#duvidas" },
 ];
 
 export default function Footer() {

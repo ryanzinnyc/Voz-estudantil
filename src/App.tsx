@@ -11,6 +11,7 @@ import Proposals from "./components/Proposals";
 import Team from "./components/Team";
 import Stats from "./components/Stats";
 import Gallery from "./components/Gallery";
+import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 
@@ -39,6 +40,7 @@ export default function App() {
           <Team />
           <Stats />
           <Gallery />
+          <FAQ />
           <FinalCTA />
         </main>
 

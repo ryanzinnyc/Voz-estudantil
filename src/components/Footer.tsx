@@ -47,10 +47,10 @@ export default function Footer() {
             </span>
             <div className="flex gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/voz_estudantil.mj/"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Instagram do grêmio"
+                aria-label="Instagram do grêmio — @voz_estudantil.mj"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-cream transition-colors hover:border-cyan/60 hover:text-cyan"
               >
                 <IconInstagram className="h-5 w-5" />
@@ -64,10 +64,12 @@ export default function Footer() {
               </a>
             </div>
             <a
-              href="mailto:gremio.voz@suaescola.com"
+              href="https://www.instagram.com/voz_estudantil.mj/"
+              target="_blank"
+              rel="noreferrer noopener"
               className="mt-1 text-sm text-muted transition-colors hover:text-cyan"
             >
-              gremio.voz@suaescola.com
+              @voz_estudantil.mj
             </a>
           </div>
         </div>

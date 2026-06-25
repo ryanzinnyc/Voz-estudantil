@@ -8,6 +8,7 @@ type ButtonProps = {
   icon?: ReactNode;
   className?: string;
   ariaLabel?: string;
+  external?: boolean; // abre em nova aba (links fora do site)
 };
 
 const base =
@@ -27,11 +28,14 @@ export default function Button({
   icon,
   className = "",
   ariaLabel,
+  external = false,
 }: ButtonProps) {
   return (
     <motion.a
       href={href}
       aria-label={ariaLabel}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer noopener" : undefined}
       whileTap={{ scale: 0.97 }}
       className={`${base} ${variants[variant]} ${className}`}
     >

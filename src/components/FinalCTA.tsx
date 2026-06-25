@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Logo from "./Logo";
 import Button from "./Button";
-import { IconArrowRight, IconMail } from "./Icons";
+import { IconArrowRight, IconInstagram } from "./Icons";
 import { EASE, inView } from "../lib/motion";
 
 export default function FinalCTA() {
@@ -56,11 +56,12 @@ export default function FinalCTA() {
             Quero participar
           </Button>
           <Button
-            href="mailto:gremio.voz@suaescola.com"
+            href="https://www.instagram.com/voz_estudantil.mj/"
             variant="ghost"
-            icon={<IconMail className="h-4 w-4" />}
+            external
+            icon={<IconInstagram className="h-4 w-4" />}
           >
-            Falar com o Grêmio
+            Seguir no Instagram
           </Button>
         </motion.div>
       </div>

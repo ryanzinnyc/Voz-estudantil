@@ -17,11 +17,11 @@ export default function Background() {
       />
 
       {/* Aurora azul — topo */}
-      <div className="vz-drift absolute -top-48 left-1/2 h-[68vh] w-[68vh] -translate-x-1/2 rounded-full bg-violet/25 blur-[64px] md:blur-[130px]" />
+      <div className="vz-aurora vz-drift absolute -top-48 left-1/2 h-[68vh] w-[68vh] -translate-x-1/2 rounded-full bg-violet/25 blur-[64px] md:blur-[130px]" />
       {/* Acento ciano — direita */}
-      <div className="vz-float absolute top-[28%] right-[-12%] h-[46vh] w-[46vh] rounded-full bg-cyan/15 blur-[64px] md:blur-[130px]" />
+      <div className="vz-aurora vz-float absolute top-[28%] right-[-12%] h-[46vh] w-[46vh] rounded-full bg-cyan/15 blur-[64px] md:blur-[130px]" />
       {/* Brilho profundo — base esquerda */}
-      <div className="vz-drift absolute bottom-[-20%] left-[-10%] h-[52vh] w-[52vh] rounded-full bg-violet-deep/40 blur-[64px] md:blur-[140px]" />
+      <div className="vz-aurora vz-drift absolute bottom-[-20%] left-[-10%] h-[52vh] w-[52vh] rounded-full bg-violet-deep/40 blur-[64px] md:blur-[140px]" />
 
       {/* Vinheta suave nas bordas */}
       <div

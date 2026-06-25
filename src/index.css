@@ -221,10 +221,10 @@
    No desktop nada muda.
    ============================================================ */
 @media (max-width: 768px) {
-  .vz-float,
-  .vz-drift,
-  .vz-shimmer-text,
-  .vz-brand-text {
+  /* Só as AURORAS gigantes do fundo (blur enorme + animação) pesam de verdade.
+     Congelamos apenas elas: o glow continua aceso, só para de se mover.
+     Shimmer do texto, brilho flutuante e revelações no scroll seguem normais. */
+  .vz-aurora {
     animation: none !important;
   }
 
